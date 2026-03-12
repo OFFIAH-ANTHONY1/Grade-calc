@@ -69,7 +69,7 @@ void getMaxValue() {
 }
 
 void getMinValue() {
-  double? minScore = 0;
+  double? minScore;
   for (var s in scores) {
     double? score = double.tryParse(s);
 

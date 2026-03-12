@@ -6,13 +6,20 @@ void main() {
   print("Grade calculator");
   print('');
 
-  stdout.write("Enter scores (type 'enter' to submit):");
+  print("Enter scores (type 'enter' to submit):");
 
   while (true) {
     String? input = stdin.readLineSync();
 
     if (input == null || input.toLowerCase() == 'enter') {
       break;
+    }
+
+    double? score = double.tryParse(input);
+
+    if (score is! double) {
+      print("Invalid! Score must be integer or decimal number.");
+      scores.remove(score);
     }
 
     scores.add(input);
