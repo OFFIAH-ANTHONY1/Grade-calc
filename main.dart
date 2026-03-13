@@ -17,12 +17,11 @@ void main() {
 
     double? score = double.tryParse(input);
 
-    if (score is! double) {
+    if (score is double) {
+      scores.add(input);
+    } else {
       print("Invalid! Score must be integer or decimal number.");
-      scores.remove(score);
     }
-
-    scores.add(input);
   }
 
   validateScore();
